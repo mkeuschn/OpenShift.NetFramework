@@ -15,7 +15,7 @@ RUN msbuild OpenShiftTest.NetFramework.sln
 RUN msbuild OpenShiftTest.NetFramework.sln /p:DeployOnBuild=true /p:PublishProfile=FolderProfile.pubxml
 
 # Copy Files
-RUN TODO
+RUN copy app.publish to wwwroot
 
 # Create Web App
-RUN New-WebApplication -Site "Default Web Site" -Name "OSTest" -PhysicalPath D:\InetPub\wwwroot\OSTest -ApplicationPool DefaultAppPool
+RUN New-WebApplication -Site "Default Web Site" -Name "app.publish" -PhysicalPath D:\InetPub\wwwroot\app.publish -ApplicationPool DefaultAppPool
